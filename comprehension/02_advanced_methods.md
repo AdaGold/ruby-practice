@@ -193,9 +193,10 @@ VIDEO_PLAYS = [
 PLAY_TIME_THRESHOULD = 0.3 # 30%
 
 def problem7(video_id, video_length)
+  min_play_time = video_length * PLAY_TIME_THRESHOLD
   VIDEO_PLAYS.select do |play|
     play[:video_id] == video_id &&
-    play[:play_time] >= video_length * PLAY_TIME_THRESHOLD
+    play[:play_time] >= min_play_time
   end.count
 end
 ```
