@@ -214,24 +214,39 @@ end
 VEHICLE_INFO = {
   coupe: {
     seats: 2,
-    fwd: false
+    fwd: false,
   },
   sedan: {
     seats: 4,
-    fwd: false
+    fwd: false,
   },
   minivan: {
     seats: 6,
-    fwd: false
+    fwd: false,
   },
   truck: {
     seats: 2,
-    fwd: true
-  }
+    fwd: true,
+  },
 }
 
-def problem8(cars_db, seats_required, fwd_required=false)
-  cars_db.values.map do |inventory|
+VEHICLE_DB = {
+  alamo: {
+    coupe: 5, sedan:  6, minivan: 4, truck: 0
+  },
+  budget: {
+    coupe: 0, sedan: 14, minivan: 1, truck: 1
+  },
+  enterprise: {
+    coupe: 6, sedan:  8, minivan: 0, truck: 9
+  },
+  hertz: {
+    coupe: 7, sedan: 10, minivan: 2, truck: 4
+  },
+}
+
+def problem8(seats_required, fwd_required=false)
+  VEHICLE_DB.values.map do |inventory|
     inventory.select do |type, _|
       info = VEHICLE_INFO[type]
       info[:seats] >= seats_required && (!fwd_required || info[:fwd])
@@ -241,38 +256,5 @@ end
 ```
 
 #### Input Values
-* 
-  ```
-  CARS_DB = {
-    alamo: {
-      coupe: 5, sedan: 6, minivan: 4, truck: 0
-    },
-    budget: {
-      coupe: 0, sedan: 14, minivan: 1, truck: 1
-    },
-    enterprise: {
-      coupe: 6, sedan: 8, minivan: 0, truck: 9
-    },
-    hertz: {
-      coupe: 7, sedan: 10, minivan: 2, truck: 4
-    },
-  }
-
-  problem8(CARS_DB, 4)
-  ```
-* 
-  ```
-  CARS_DB = {
-    alamo: {
-      coupe: 1, sedan: 3, minivan: 10, truck: 1
-    },
-    budget: {
-      coupe: 1, sedan: 4, minivan: 1, truck: 3
-    },
-    enterprise: {
-      coupe: 6, sedan: 6, minivan: 4, truck: 8
-    },
-  }
-
-  problem8(CARS_DB, 2, true)
-  ```
+* `problem8(4)`
+* `problem8(2, true)`
