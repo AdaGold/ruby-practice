@@ -192,3 +192,47 @@ end
 * `agencies_to_contact(:sedan, 22)`
 * `agencies_to_contact(:truck, 10)`
 * `agencies_to_contact(:minivan, 8)`
+
+### Problem 4
+#### Code Snippet
+```ruby
+AGENCY_PREFERENCE = [
+  :enterprise,
+  :alamo,
+  :hertz,
+  :budget
+]
+
+def agency_type_qty(agency, type)
+  VEHICLE_DB[agency][type].to_i
+end
+
+def agency_has_type?(agency, type)
+  agency_type_qty(agency, type) > 0
+end
+
+def agency_quantities(type, quantity)
+  agencies = AGENCY_PREFERENCE.reduce({}) do |agencies, agency|
+    qty_left = quantity - agencies.values.sum
+
+    if qty_left > 0 && agency_has_type?(agency, type)
+      agency_qty = agency_type_qty(agency, type)
+
+      agencies[agency] = [agency_qty, qty_left].min
+    end
+
+    agencies
+  end
+
+  if agencies.values.sum < quantity
+    raise StandardError.new("Could not find sufficient vehicles of type '#{type}'.")
+  end
+
+  agencies
+end
+```
+
+#### Input Values
+* `agency_quantities(:coupe, 12)`
+* `agency_quantities(:truck, 20)`
+* `agency_quantities(:minivan, 3)`
