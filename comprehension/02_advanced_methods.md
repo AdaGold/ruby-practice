@@ -190,7 +190,7 @@ VIDEO_PLAYS = [
   { user_id: 22877914, video_id: "H8n-Z41b1", play_time: 109.3 },
 ]
 
-PLAY_TIME_THRESHOULD = 0.3 # 30%
+PLAY_TIME_THRESHOLD = 0.3 # 30%
 
 def problem7(video_id, video_length)
   min_play_time = video_length * PLAY_TIME_THRESHOLD
