@@ -257,7 +257,7 @@ end
     },
   }
 
-  problem8(CARS_DB, 2)
+  problem8(CARS_DB, 4)
   ```
 * 
   ```
