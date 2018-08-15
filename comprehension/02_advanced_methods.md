@@ -141,16 +141,16 @@ problem5(some_array)
 #### Code Snippet
 ```ruby
 SALES = [
-  { provider: "Asha", service: "Touchup and Cut", price: 40.00 },
-  { provider: "Asha", service: "Shampoo", price: 15.00 },
-  { provider: "Rosalind", service: "Partial Highlight", price: 110.00 },
-  { provider: "Sunny", service: "Pravana Smoothing", price: 235.00 },
-  { provider: "Rosalind", service: "Full Foil", price: 140.00 },
-  { provider: "Marzanna", service: "Blowout", price: 50.00 },
-  { provider: "Ndidi Van", service: "Women's Haircut", price: 70.00 },
+  { provider: "Asha",     service: "Touchup and Cut",    price:  40.00 },
+  { provider: "Asha",     service: "Shampoo",            price:  15.00 },
+  { provider: "Rosalind", service: "Partial Highlight",  price: 110.00 },
+  { provider: "Sunny",    service: "Pravana Smoothing",  price: 235.00 },
+  { provider: "Rosalind", service: "Full Foil",          price: 140.00 },
+  { provider: "Marzanna", service: "Blowout",            price:  50.00 },
+  { provider: "Ndidi",    service: "Women's Haircut",    price:  70.00 },
   { provider: "Rosalind", service: "Balayage Highlight", price: 155.00 },
-  { provider: "Sunny", service: "Pravana Smoothing", price: 235.00 },
-  { provider: "Marzanna", service: "Blowout", price: 50.00 },
+  { provider: "Sunny",    service: "Pravana Smoothing",  price: 235.00 },
+  { provider: "Marzanna", service: "Blowout",            price:  50.00 },
 ]
 
 def problem6(provider)
