@@ -18,7 +18,7 @@ For each problem listed below, follow these steps to practice your code reading 
 1. While you should push yourself to predict the correct return value for each of these problems, this is intentionally a challenging exercise. Don't be discouraged if you get something wrong! The instructions above involve re-reading and comprehending the code again after trying each input precisely for this reason. Look at this as an iterative process, each time hopefully getting closer to a full understanding of the code snippet.
 1. You CAN use the Internet, any of our lecture resources, or any of your notes. Some of these problems might involve methods that you've not seen in class, so you will need to look them up in the Ruby docs.
 1. Some of the input values for a given problem might result in an error rather than a return value. This is intentional.
-1. Each problem is intended to be more challenging to read and comprehend than the previous ones. Even though the code isn't always longer, it may be using more sophisticated techniques.
+1. Each problem is intended to be more challenging to read and comprehend than the previous ones.
 
 ## Practice Problems
 ### Problem 1
