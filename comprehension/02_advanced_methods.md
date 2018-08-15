@@ -174,6 +174,42 @@ end
 ### Problem 7
 #### Code Snippet
 ```ruby
+VIDEO_PLAYS = [
+  { user_id: 57579013, video_id: "H8n-Z41b1", play_time: 288.1 },
+  { user_id: 38328560, video_id: "kO1v3BMDx", play_time: 202.0 },
+  { user_id:  3961384, video_id: "H8n-Z41b1", play_time: 144.8 },
+  { user_id: 22877914, video_id: "kO1v3BMDx", play_time: 202.0 },
+  { user_id: 80081492, video_id: "_v99zAYUz", play_time:  71.7 },
+  { user_id:   593326, video_id: "H8n-Z41b1", play_time:   4.4 },
+  { user_id: 22877914, video_id: "H8n-Z41b1", play_time: 129.9 },
+  { user_id: 80081492, video_id: "kO1v3BMDx", play_time: 202.0 },
+  { user_id: 80081492, video_id: "H8n-Z41b1", play_time: 170.6 },
+  { user_id:  3961384, video_id: "_v99zAYUz", play_time:  67.1 },
+  { user_id: 22877914, video_id: "_v99zAYUz", play_time:  55.9 },
+  { user_id: 57579013, video_id: "_v99zAYUz", play_time:  66.8 },
+  { user_id: 22877914, video_id: "H8n-Z41b1", play_time: 109.3 },
+]
+
+PLAY_TIME_THRESHOULD = 0.3 # 30%
+
+def problem7(video_id, video_length)
+  VIDEO_PLAYS.select do |play|
+    play[:video_id] == video_id &&
+    play[:play_time] >= video_length * PLAY_TIME_THRESHOLD
+  end.count
+end
+```
+
+#### Input Values
+**NOTE**: For this and following problems we use a different convention for the input values. Instead of writing the value that should be provided as the sole parameter to the method, we write the full invocation of that method because there are multiple parameters.
+
+* `problem7("H8n-Z41b1", 301.1)`
+* `problem7("_v99zAYUz",  72.8)`
+* `problem7("m_-6Y6df6", 474.0)`
+
+### Problem 8
+#### Code Snippet
+```ruby
 VEHICLE_INFO = {
   coupe: {
     seats: 2,
@@ -193,7 +229,7 @@ VEHICLE_INFO = {
   }
 }
 
-def problem7(cars_db, seats_required, fwd_required=false)
+def problem8(cars_db, seats_required, fwd_required=false)
   cars_db.values.map do |inventory|
     inventory.select do |type, _|
       info = VEHICLE_INFO[type]
@@ -218,10 +254,10 @@ end
     },
     hertz: {
       coupe: 7, sedan: 10, minivan: 2, truck: 4
-    }
+    },
   }
 
-  problem7(CARS_DB, 2)
+  problem8(CARS_DB, 2)
   ```
 * 
   ```
@@ -234,8 +270,8 @@ end
     },
     enterprise: {
       coupe: 6, sedan: 6, minivan: 4, truck: 8
-    }
+    },
   }
 
-  problem7(CARS_DB, 2, true)
+  problem8(CARS_DB, 2, true)
   ```
