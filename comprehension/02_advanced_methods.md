@@ -187,10 +187,10 @@ VIDEO_PLAYS = [
   { user_id:  3961384, video_id: "_v99zAYUz", play_time:  67.1 },
   { user_id: 22877914, video_id: "_v99zAYUz", play_time:  55.9 },
   { user_id: 57579013, video_id: "_v99zAYUz", play_time:  66.8 },
-  { user_id: 22877914, video_id: "H8n-Z41b1", play_time: 109.3 },
+  { user_id: 22877914, video_id: "H8n-Z41b1", play_time: 100.3 },
 ]
 
-PLAY_TIME_THRESHOLD = 0.3 # 30%
+PLAY_TIME_THRESHOLD = 0.333 # 33.3%
 
 def problem7(video_id, video_length)
   min_play_time = video_length * PLAY_TIME_THRESHOLD
@@ -204,7 +204,7 @@ end
 #### Input Values
 **NOTE**: For this and following problems we use a different convention for the input values. Instead of writing the value that should be provided as the sole parameter to the method, we write the full invocation of that method because there are multiple parameters.
 
-* `problem7("H8n-Z41b1", 301.1)`
+* `problem7("H8n-Z41b1", 310.1)`
 * `problem7("_v99zAYUz",  72.8)`
 * `problem7("m_-6Y6df6", 474.0)`
 
